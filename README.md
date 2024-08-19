@@ -1,6 +1,10 @@
-# taskmanagementsystem
+# tms
 
-nestjs nextjs mongodb authjs tailwindcss shadcn=ui
+![nestjs](https://img.shields.io/badge/nestjs-E0234E?style=for-the-badge&logo=nestjs&logoColor=white)
+![nextjs](https://img.shields.io/badge/next%20js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
+![mongodb](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
+![tailwindcss](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![shadcn/ui](https://img.shields.io/badge/shadcn%2Fui-000000?style=for-the-badge&logo=shadcnui&logoColor=white)
 
 ### Installation
 
@@ -19,6 +23,12 @@ docker compose up
 
 > The mongodb is automatically seeded on first run, one default account can be use to login:
 
+### Accessing the webapp
+
+Open a browser and navigate to http://localhost:3000
+
+> The mongodb is automatically seeded on first run, one default account can be use to login:
+
 ```zsh
 erictestemail.gmail.com
 tester123@Admin#
@@ -28,7 +38,7 @@ tester123@Admin#
 
 If you have `Thunder Client` for VSCODE, you can use the `thunder-collection_taskmanagementsystemendpoints.json` file in the root folder use to call the api.
 
-> Please note all APIs are protected by a JWT token, use the tms-sign api call from the collection to generate a token like this:
+> Please note all APIs are protected by a JWT token, use the `tms-sign` api call from the collection to generate a token like this:
 
 ```json
 {
