@@ -1,0 +1,173 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "taskmanagementsystemendpoints",
+    "collectionId": "e2b87c87-5dd8-4728-92d7-bbda88e4c540",
+    "dateExported": "2024-08-18T17:47:20.652Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "96e43ed2-48b9-4139-bde2-e95b173b662e",
+            "colId": "e2b87c87-5dd8-4728-92d7-bbda88e4c540",
+            "containerId": "",
+            "name": "tms - get task by id",
+            "url": "http://localhost:3001/task/66c2010298652192cbc4c5a9",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-08-18T17:45:47.807Z",
+            "modified": "2024-08-18T17:45:47.807Z",
+            "headers": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmMwZDNjMzMzZjFjYjVhOWQ1YWI3MjYiLCJyb2xlIjoiQWRtaW4iLCJpYXQiOjE3MjM5NjkxMzUsImV4cCI6MTcyNDMwMjQ2OH0.zZVdRusPUcYF0hG5bq9xdHHYa02-a2af033996NPCTQ"
+            }
+        },
+        {
+            "_id": "c98998aa-d2dd-453d-8034-ce835543436f",
+            "colId": "e2b87c87-5dd8-4728-92d7-bbda88e4c540",
+            "containerId": "",
+            "name": "tms - get assigned task",
+            "url": "http://localhost:3001/task/assingedtask",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-08-18T17:45:51.707Z",
+            "modified": "2024-08-18T17:45:51.707Z",
+            "headers": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmMyMTkzZTVjMGUxM2UxM2MxODkxNzkiLCJyb2xlIjoiQWRtaW4iLCJpYXQiOjE3MjM5OTY2MzQsImV4cCI6MTcyNDMyOTk2N30.bLhzA0udEefKIuWz7MyroBhS_kS3Li4Y19co_SLo21g"
+            }
+        },
+        {
+            "_id": "54e6efea-56e8-4e1f-8cf8-0cf43148ef30",
+            "colId": "e2b87c87-5dd8-4728-92d7-bbda88e4c540",
+            "containerId": "",
+            "name": "tms - get all task",
+            "url": "http://localhost:3001/task/",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2024-08-18T17:45:55.639Z",
+            "modified": "2024-08-18T17:45:55.639Z",
+            "headers": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmMyMzIzNzNkYjExOWRkMTlhYTJjMDUiLCJyb2xlIjoiQWRtaW4iLCJpYXQiOjE3MjQwMDI5NTcsImV4cCI6MTcyNDMzNjI5MH0.v4lmx5H5UBCZkYq20bE9ELaLNiblDsHV5UrWkEvTQ9c"
+            }
+        },
+        {
+            "_id": "8c3e45d4-9e1c-4835-b248-cecc6fb82cce",
+            "colId": "e2b87c87-5dd8-4728-92d7-bbda88e4c540",
+            "containerId": "",
+            "name": "tms - signin",
+            "url": "http://localhost:3001/auth/signin",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2024-08-18T17:45:59.603Z",
+            "modified": "2024-08-18T17:45:59.603Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "*/*",
+                    "isDisabled": true
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "biickmagee",
+                    "isDisabled": true
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\":\"hoyt.nader@hotmail.com\",\n  \"password\":\"0415@User#\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "e5042c0e-2ce8-4fc1-974e-e41a3388af8f",
+            "colId": "e2b87c87-5dd8-4728-92d7-bbda88e4c540",
+            "containerId": "",
+            "name": "tms - delete task",
+            "url": "http://localhost:3001/task/66c2030cdf2fcc4d48b14618",
+            "method": "DELETE",
+            "sortNum": 70000,
+            "created": "2024-08-18T17:46:05.710Z",
+            "modified": "2024-08-18T17:46:05.710Z",
+            "headers": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmMwZDNjMzMzZjFjYjVhOWQ1YWI3MjYiLCJyb2xlIjoiQWRtaW4iLCJpYXQiOjE3MjM5NjkxMzUsImV4cCI6MTcyNDMwMjQ2OH0.zZVdRusPUcYF0hG5bq9xdHHYa02-a2af033996NPCTQ"
+            }
+        },
+        {
+            "_id": "5329cdcf-a4cd-463b-830f-a741ea40370f",
+            "colId": "e2b87c87-5dd8-4728-92d7-bbda88e4c540",
+            "containerId": "",
+            "name": "tms - getusers",
+            "url": "http://localhost:3001/users/66c0d3c333f1cb5a9d5ab726",
+            "method": "GET",
+            "sortNum": 80000,
+            "created": "2024-08-18T17:46:12.790Z",
+            "modified": "2024-08-18T17:46:12.790Z",
+            "headers": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmMwZDNjMzMzZjFjYjVhOWQ1YWI3MjYiLCJyb2xlIjoiQWRtaW4iLCJpYXQiOjE3MjM5NjkxMzUsImV4cCI6MTcyNDMwMjQ2OH0.zZVdRusPUcYF0hG5bq9xdHHYa02-a2af033996NPCTQ"
+            }
+        },
+        {
+            "_id": "24b1752f-4214-4611-8dfc-7e284a147401",
+            "colId": "e2b87c87-5dd8-4728-92d7-bbda88e4c540",
+            "containerId": "",
+            "name": "tms - update task",
+            "url": "http://localhost:3001/task/66bf775616ca8e0f026d65af",
+            "method": "PUT",
+            "sortNum": 130000,
+            "created": "2024-08-18T17:46:31.271Z",
+            "modified": "2024-08-18T17:46:31.271Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"title\": \"xxx\",\n  \"description\": \"xxx\",\n  \"dueDate\": \"2024-12-05T19:03:06.069Z\",\n  \"status\": \"InProgress\",\n  \"assignedToName\": \"Hope Runolfsson\",\n  \"assignedToId\": \"66bf75b0cf5a5f8378e40666\",\n  \"createdById\": \"66bf75b0cf5a5f8378e40666\",\n  \"createdByName\": \"Hope Runolfsson\",\n  \"Priority\": \"Low\",\n  \"createdAt\": \"2024-08-16T15:59:18.410Z\",\n  \"updatedAt\": \"2024-08-16T15:59:18.410Z\"\n  }",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmJmNzVhZmNmNWE1ZjgzNzhlNDA2NWUiLCJyb2xlIjoiQWRtaW4iLCJpYXQiOjE3MjM4MzAxNTEsImV4cCI6MTcyMzgzMDMzMX0.AtCxhErz5cP6Z-AHkQNd9uaN_YoG2jT3XuT-3txl8dg"
+            }
+        },
+        {
+            "_id": "01d44c1d-6552-4bb8-99d4-08c2399258b7",
+            "colId": "e2b87c87-5dd8-4728-92d7-bbda88e4c540",
+            "containerId": "",
+            "name": "tms - create task with auth token",
+            "url": "http://localhost:3001/task/",
+            "method": "POST",
+            "sortNum": 140000,
+            "created": "2024-08-18T17:46:40.703Z",
+            "modified": "2024-08-18T17:46:40.703Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"title\":\"fffff\",\n  \"description\":\"New Description\",\n  \"dueDate\":\"2025-11-21T00:00:00Z\",\n  \"status\":\"InProgress\",\n  \"assignedToId\":\"66c0d3c333f1cb5a9d5ab726\",\n  \"Priority\":\"Low\"\n}\n\n",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmMwZDNjMzMzZjFjYjVhOWQ1YWI3MjYiLCJyb2xlIjoiQWRtaW4iLCJpYXQiOjE3MjM5NjkxMzUsImV4cCI6MTcyNDMwMjQ2OH0.zZVdRusPUcYF0hG5bq9xdHHYa02-a2af033996NPCTQ"
+            }
+        },
+        {
+            "_id": "940f6fd8-edab-42df-8a35-417efc5c716c",
+            "colId": "e2b87c87-5dd8-4728-92d7-bbda88e4c540",
+            "containerId": "",
+            "name": "tms - get all users",
+            "url": "http://localhost:3001/users",
+            "method": "GET",
+            "sortNum": 150000,
+            "created": "2024-08-18T17:46:43.759Z",
+            "modified": "2024-08-18T17:46:43.759Z",
+            "headers": []
+        }
+    ],
+    "ref": "Xetjgrxhbdzc8LEzS_f1zK7Johzamb9dkO4R_q5hxczChbipjmdI33UILdWMSeGTXhYqRLHVzUwJjrMvLJJw3A"
+}

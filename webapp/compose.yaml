@@ -1,0 +1,30 @@
+#defining the services
+services:
+  #defining the web service for nextjs app
+  webapp:
+    #define required environment variable
+    environment:
+      - TZ=Asia/Dubai
+      - AUTH_SECRET=${AUTH_SECRET}
+      - API_URL=${API_URL}
+    build:
+      context: .
+      dockerfile: Dockerfile
+    #define ports for the app
+    network_mode: "host"
+    ports:
+      - 3000:3000
+    #defining the watch mode for changes for dev
+    develop:
+      #files to watch
+      watch:
+        - path: ./package.json
+          action: rebuild
+        - path: ./next.config.mjs
+          action: rebuild
+        - path: ./package-lock.json
+          action: rebuild
+        # for the front end directory changes
+        - path: .
+          target: /webapp
+          action: sync

@@ -1,0 +1,80 @@
+#defining the services
+services:
+  #defining the web service for nextjs app
+  webapp:
+    #define required environment variable
+    environment:
+      - TZ=Asia/Dubai
+      - AUTH_SECRET=O6dMb0daow5dZq7Gwv0fJ2wVm/V0TEDuRMYo8cjJlgQ=
+      - API_URL=http://localhost:3001/
+    build:
+      context: ./webapp
+    #define ports for the app
+    network_mode: "host"
+    ports:
+      - 3000:3000
+    #defining the watch mode for changes for dev
+    develop:
+      #files to watch
+      watch:
+        - path: ./package.json
+          action: rebuild
+        - path: ./next.config.mjs
+          action: rebuild
+        - path: ./package-lock.json
+          action: rebuild
+        # for the front end directory changes
+        - path: .
+          target: /webapp
+          action: sync
+  #defining the web service for nextjs app
+  api_service:
+    container_name: api_service
+    restart: always
+    # this service depends on the mongodb service
+    depends_on:
+      - mongodb_service
+    #define required environment variable
+    environment:
+      - TZ=Asia/Dubai
+      - MONGODB_URI=mongodb://0.0.0.0:27017/tms_db
+      - TOKEN_EXP=333333
+      - TOKEN_SECRET=1098412u31jlkghasd9873219urjklxdcmvl.kx,jmoiwseuy349812635tksjhdkjh109237459htglkjdh9871236412wkuhsdguyws098364721037
+      - REFRESH_EXP=900
+    build:
+      context: ./api
+    #define ports for the app
+    network_mode: "host"
+
+    ports:
+      - 3001:3001
+    #defining the watch mode for changes for dev
+    develop:
+      #files to watch
+      watch:
+        - path: ./package.json
+          action: rebuild
+        - path: ./nest-cli.json
+          action: rebuild
+        - path: ./package-lock.json
+          action: rebuild
+        - path: .
+          target: /api
+          action: sync
+
+  #define the mongodb service here
+  mongodb_service:
+    # define the mongodb image
+    image: mongo
+    restart: always
+    container_name: mongodb_service
+    # expose the ports for the mongodb service
+    ports:
+      - 27017:27017
+    # specify volume for mongodb
+    volumes:
+      - taskmanagementsystem:/data/db
+
+#define the volumes for the services
+volumes:
+  taskmanagementsystem:

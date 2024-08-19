@@ -1,0 +1,54 @@
+#defining the services
+services:
+  #defining the web service for nextjs app
+  api_service:
+    container_name: api_service
+    restart: always
+    # this service depends on the mongodb service
+    depends_on:
+      - mongodb_service
+    #define required environment variable
+    environment:
+      - TZ=Asia/Dubai
+      - MONGODB_URI=${MONGODB_URI}
+      - TOKEN_EXP=${TOKEN_EXP}
+      - TOKEN_SECRET=${TOKEN_SECRET}
+      - REFRESH_EXP=${REFRESH_EXP}
+    build:
+      context: .
+      dockerfile: Dockerfile
+    #define ports for the app
+    network_mode: 'host'
+
+    ports:
+      - 3001:3001
+    #defining the watch mode for changes for dev
+    develop:
+      #files to watch
+      watch:
+        - path: ./package.json
+          action: rebuild
+        - path: ./nest-cli.json
+          action: rebuild
+        - path: ./package-lock.json
+          action: rebuild
+        - path: .
+          target: /api
+          action: sync
+
+  #define the mongodb service here
+  mongodb_service:
+    # define the mongodb image
+    image: mongo
+    restart: always
+    container_name: mongodb_service
+    # expose the ports for the mongodb service
+    ports:
+      - 27017:27017
+    # specify volume for mongodb
+    volumes:
+      - taskmanagementsystem:/data/db
+
+#define the volumes for the services
+volumes:
+  taskmanagementsystem:
