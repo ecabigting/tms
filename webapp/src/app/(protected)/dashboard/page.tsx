@@ -4,6 +4,8 @@ import { getAllTasks, getHighPriorityTask, getTaskPriorityBreakDown, getTaskSumm
 import { currentUser } from "../../../../utils/sessions";
 import { DashboardHighPrioTable } from "@/page-components/DashboardHighPrioTable";
 import { DashboardHorizontalBarChart } from "@/page-components/DashboardHorizontalBarChart";
+import DashboardAllTasksTable from "@/page-components/DashboardAllTasksTable";
+import DashboardTables from "./DashboardTables";
 
 export default async function Dashboard() {
 	const loggedInUser = await currentUser();
@@ -20,13 +22,8 @@ export default async function Dashboard() {
 					<DashboardPiechart taskSummary={taskSummary} />
 					<DashboardHorizontalBarChart taskPrioritySummary={taskPrioritySummary} />
 				</div>
-				<div className=' '>
-					<h2 className='py-5'>High Priority Task</h2>
-					<DashboardHighPrioTable data={priorityTask} />
-				</div>
-				<div className=' '>
-					<h2 className='py-5'>All Task</h2>
-					<DashboardHighPrioTable data={getAllTask} />
+				<div>
+					<DashboardTables />
 				</div>
 			</div>
 		</div>

@@ -11,6 +11,7 @@ import { ColumnDef } from "@tanstack/react-table";
 import { MoreHorizontal } from "lucide-react";
 import Link from "next/link";
 import { deleteTask } from "../../../api/task";
+import DataTableDeleteButton from "../DataTableDeleteButton";
 
 // This type is used to define the shape of our data.
 // You can use a Zod schema here if you want.
@@ -19,6 +20,8 @@ export type HighPriorityTask = {
 	title: string;
 	description: string;
 	dueDate: Date;
+	status: string;
+	Priority: string;
 	assignedToName: string;
 	createdAt: Date;
 };
@@ -55,6 +58,48 @@ export const highPrioColum: ColumnDef<HighPriorityTask>[] = [
 		header: "Assigned To",
 	},
 	{
+		accessorKey: "status",
+		header: "Status",
+		cell: ({ row }) => {
+			const value = row.getValue("status") as string;
+			let status = value;
+			switch (status) {
+				case "Pending":
+					return (
+						<span className='rounded-md px-2 py-1 text-sm font-medium bg-yellow-100 text-yellow-800'>Pending</span>
+					);
+				case "InProgress":
+					return (
+						<span className='rounded-md px-2 py-1 text-sm font-medium bg-blue-100 text-blue-800'>In Progress</span>
+					);
+				case "Completed":
+					return (
+						<span className='rounded-md px-2 py-1 text-sm font-medium bg-green-100 text-green-800'>Completed</span>
+					);
+				default:
+					return <span>Unknown</span>;
+			}
+		},
+	},
+	{
+		accessorKey: "Priority",
+		header: "Priority",
+		cell: ({ row }) => {
+			const value = row.getValue("Priority") as string;
+			let priority = value;
+			switch (priority) {
+				case "Low":
+					return <span className='rounded-md px-2 py-1 text-sm font-medium bg-blue-100 text-blue-800'>Low</span>;
+				case "Medium":
+					return <span className='rounded-md px-2 py-1 text-sm font-medium bg-yellow-100 text-yellow-800'>Medium</span>;
+				case "High":
+					return <span className='rounded-md px-2 py-1 text-sm font-medium bg-red-100 text-red-800'>High</span>;
+				default:
+					return <span>Unknown</span>;
+			}
+		},
+	},
+	{
 		accessorKey: "createdAt",
 		header: "Created Date",
 		cell: ({ row }) => {
@@ -73,33 +118,7 @@ export const highPrioColum: ColumnDef<HighPriorityTask>[] = [
 		id: "actions",
 		header: "Actions",
 		cell: ({ row }) => {
-			const handleDeleteOnClick = async (id: any) => {
-				await deleteTask(id);
-				window.location.reload();
-			};
-			return (
-				<DropdownMenu>
-					<DropdownMenuTrigger asChild>
-						<Button variant='ghost' className='h-8 w-8 p-0'>
-							<span className='sr-only'>Open menu</span>
-							<MoreHorizontal className='h-4 w-4' />
-						</Button>
-					</DropdownMenuTrigger>
-					<DropdownMenuContent align='end'>
-						<DropdownMenuItem>
-							<Link href={`/task/${row.getValue("_id") as string}`}>View Task</Link>
-						</DropdownMenuItem>
-						<DropdownMenuItem
-							onClick={() => {
-								handleDeleteOnClick(row.getValue("_id") as string);
-							}}
-						>
-							{" "}
-							Delete
-						</DropdownMenuItem>
-					</DropdownMenuContent>
-				</DropdownMenu>
-			);
+			return <DataTableDeleteButton id={row.getValue("_id") as string} taskname={row.getValue("title") as string} />;
 		},
 	},
 ];

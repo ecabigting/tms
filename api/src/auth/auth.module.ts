@@ -5,6 +5,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { User, UserSchema } from 'src/users/entities/user.entity';
 import { JwtModule } from '@nestjs/jwt';
 import { AccessToken, AccessTokenSchema } from './entities/accessToken.entity';
+// require('dotenv').config();
 
 @Module({
   imports: [

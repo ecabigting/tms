@@ -73,7 +73,9 @@ export class TaskService {
         Priority: TaskPriority.High,
         isDeleted: false,
       })
-      .select('_id title description dueDate createdAt assignedToName ')
+      .select(
+        '_id title description dueDate createdAt assignedToName status Priority',
+      )
       .sort({ dueDate: 'asc' });
   }
 
